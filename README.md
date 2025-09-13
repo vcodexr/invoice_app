@@ -1,4 +1,4 @@
-<h3>Invoice Management System (Flask + Peewee + Tailwind)</h3>
+<h3>Invoice Management System </h3>
 
 This project is a simple Invoice Management System built using Python’s Flask framework, the Peewee ORM, SQLite for storage, and Tailwind CSS for styling. It also uses WeasyPrint to generate professional-looking PDF invoices. The purpose of this project is to show how a small but complete web application can be built from scratch. It combines database models, CRUD operations, templates, and styling into one system.
 
