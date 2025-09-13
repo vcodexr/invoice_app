@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice {{ invoice.id }}</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { margin-bottom: 10px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #333; padding: 8px; text-align: left; }
+    th { background: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>Invoice #{{ invoice.id }}</h1>
+  <p><strong>Customer:</strong> {{ invoice.customer.name }}</p>
+  <p><strong>Email:</strong> {{ invoice.customer.email }}</p>
+  <p><strong>Address:</strong> {{ invoice.customer.address }}</p>
+  <p><strong>Date:</strong> {{ invoice.date }}</p>
+
+  <h2>Items</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr>
+        <td>{{ item.description }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>₹{{ item.price }}</td>
+        <td>₹{{ item.subtotal }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h2 style="margin-top:20px;">Total: ₹{{ invoice.total }}</h2>
+</body>
+</html>
